@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo | Vox Populis</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<!-- data-area="admin": o scriptCabecalho.js exige login de administrador e mostra o menu do admin -->
+<body data-area="admin">
+
+    <header>
+        <h1>Vox Populis</h1>
+        <p>Painel Administrativo</p>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="vereadores.html">Vereadores</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section aria-labelledby="tituloIndicacoesRecebidas">
+
+            <h2 id="tituloIndicacoesRecebidas">Indicações Recebidas</h2>
+
+            <p>
+                Acompanhe as indicações cadastradas pelos cidadãos
+                e atualize o status de cada uma.
+            </p>
+
+            <div id="listaIndicacoesAdmin">
+                <p>Carregando indicações...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Vox Populis - Plataforma de participação cidadã.</p>
+    </footer>
+
+    <script src="../js/scriptCabecalho.js"></script>
+    <script src="../js/scriptPainelAdmin.js"></script>
+
+</body>
+</html>

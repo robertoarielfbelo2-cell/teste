@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Vox Populis</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vox Populis</h1>
+        <p>Plataforma de participação cidadã</p>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html" aria-current="page">Início</a>
+            <a href="vereadores.html">Vereadores</a>
+        </nav>
+
+        <!-- Preenchido pelo scriptCabecalho.js conforme quem está logado -->
+        <div class="conta">
+            <a href="login.html">Entrar</a>
+            <a href="cadastro.html">Cadastrar-se</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Abas: Indicações e Projetos de lei ficam separados (scriptAbas.js) -->
+        <div class="abas" role="tablist" aria-label="O que você quer acompanhar">
+            <button type="button" role="tab" id="aba-indicacoes" aria-controls="painel-indicacoes"
+                aria-selected="true" data-hash="indicacoes">Indicações</button>
+            <button type="button" role="tab" id="aba-projetos" aria-controls="painel-projetos"
+                aria-selected="false" data-hash="projetos">Projetos de lei</button>
+        </div>
+
+        <div id="painel-indicacoes" role="tabpanel" aria-labelledby="aba-indicacoes">
+
+            <section aria-labelledby="tituloPrincipal">
+                <h2 id="tituloPrincipal">Indicações da comunidade</h2>
+
+                <p>Conheça as propostas enviadas pelos cidadãos.</p>
+
+                <a href="cadastroIndicacao.html" id="novaIndicacao">
+                    Nova indicação
+                </a>
+            </section>
+
+            <section class="filtros" id="filtros"
+                     aria-labelledby="tituloFiltros">
+
+                <h2 id="tituloFiltros">Filtrar indicações</h2>
+
+                <form id="formFiltro">
+
+                    <label for="filtroStatus">Status</label>
+                        <select id="filtroStatus" name="status">
+                        <option value="">Todos</option>
+                        <option value="Enviada">Enviada</option>
+                        <option value="Em análise">Em análise</option>
+                        <option value="Aprovada">Aprovada</option>
+                        <option value="Em execução">Em execução</option>
+                        <option value="Concluída">Concluída</option>
+                        <option value="Recusada">Recusada</option>
+                    </select>
+
+                    <label for="filtroCep">CEP</label>
+                    <input
+                        type="text"
+                        id="filtroCep"
+                        name="cep"
+                        maxlength="9"
+                        inputmode="numeric"
+                        placeholder="00000-000"
+                    >
+
+                    <label for="filtroBairro">Bairro</label>
+                    <input
+                        type="text"
+                        id="filtroBairro"
+                        name="bairro"
+                    >
+
+                    <label for="filtroMunicipio">Município</label>
+                    <input
+                        type="text"
+                        id="filtroMunicipio"
+                        name="municipio"
+                    >
+
+                    <button type="submit">Filtrar</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="tituloIndicacoes">
+
+                <h2 id="tituloIndicacoes">Indicações recentes</h2>
+
+                <div id="listaIndicacoes">
+                    <!-- O JavaScript adicionará as indicações aqui -->
+                </div>
+
+            </section>
+
+            <p id="mensagem" role="status"></p>
+
+        </div>
+
+        <div id="painel-projetos" role="tabpanel" aria-labelledby="aba-projetos" hidden>
+
+            <section aria-labelledby="tituloProjetos">
+                <h2 id="tituloProjetos">Projetos de lei</h2>
+
+                <p>
+                    Acompanhe os projetos apresentados pelos vereadores, veja em que
+                    situação cada um está e apoie os que você considera importantes.
+                </p>
+
+                <form id="formFiltroProjetos">
+                    <label for="filtroSituacao">Filtrar por situação:</label>
+                    <select id="filtroSituacao" name="situacao">
+                        <option value="">Todas</option>
+                    </select>
+                </form>
+            </section>
+
+            <section aria-labelledby="tituloListaProjetos">
+                <h2 id="tituloListaProjetos">Projetos recentes</h2>
+
+                <p id="resumoProjetos" role="status">Carregando projetos...</p>
+
+                <!-- Preenchido pelo scriptProjetosCidadao.js -->
+                <div id="listaProjetos"></div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Vox Populis - Plataforma de participação cidadã.</p>
+    </footer>
+
+    <script src="../js/scriptCabecalho.js"></script>
+    <script src="../js/scriptAbas.js"></script>
+    <script src="../js/scriptIndex.js"></script>
+    <script src="../js/scriptProjetosCidadao.js"></script>
+
+</body>
+</html>
